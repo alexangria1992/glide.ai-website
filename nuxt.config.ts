@@ -3,7 +3,7 @@ import { repositoryName, apiEndpoint } from './slicemachine.config.json';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   future: {
-    compatibilityVersion: 4
+    compatibilityVersion: 4,
   },
 
   devtools: { enabled: true },
@@ -21,10 +21,16 @@ export default defineNuxtConfig({
         { name: 'format-detection', content: 'telephone=no' },
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    }
+    },
   },
+  css: ['~/assets/css/main.css'],
 
-  modules: ['@nuxt/eslint', '@nuxtjs/prismic'],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxtjs/prismic',
+    '@nuxtjs/tailwindcss',
+    '@nuxt/fonts',
+  ],
 
   prismic: {
     endpoint: apiEndpoint || repositoryName,
@@ -40,9 +46,9 @@ export default defineNuxtConfig({
           uid: 'home',
           path: '/',
         },
-      ]
-    }
+      ],
+    },
   },
 
   compatibilityDate: '2025-01-06',
-})
+});
