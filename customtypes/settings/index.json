@@ -42,6 +42,17 @@
           "repeat": true,
           "variants": ["link", "button"]
         }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "case_studies": {
+              "type": "SharedSlice"
+            }
+          }
+        }
       }
     }
   }
